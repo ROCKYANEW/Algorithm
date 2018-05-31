@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int N;				//	Count of stair
+int P[310];		//	P[i]: i The score you get when you step on the stairs
+int Step[310];
+
+int max(int a, int b){
+	return a > b ? a : b;
+}
+
+int main(void){
+	int i;
+	scanf("%d", &N);
+	for (i = 1; i <= N; i++)
+		scanf("%d", &P[i]);
+
+	//	Write code
+	for(i = 1; (i <= 3) && (i <= N); i++){
+		if(i != 3)
+			Step[i] = Step[i - 1] + P[i];
+		else
+			Step[i] = max(P[i] + Step[i - 2], P[i] + P[i - 1]);
+	}
+	
+	for(i = 4; i<= N; i++)
+		Step[i]=max(P[i] + Step[i - 2], P[i] + P[i - 1] + Step[i - 3]);
+	
+    printf("%d", Step[N]);	//	정답 출력
+    return 0;
+}
