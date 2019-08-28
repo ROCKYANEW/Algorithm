@@ -13,7 +13,7 @@ int Enqueue(int data)
 		이것과 rp가 같다는것은 Circular Queue 관점에서 Queue Full을 의미한다. */
     if ((wp + 1) % MAX_Q == rp) return 0;
     queue[wp] = data;
-    wp = (wp + 1) % MAX_Q;		// 단순 증가(하지만 Queue가 가득 찼을 경우 0으로 rp를 돌린다. - Circular Queue)
+    wp = (wp + 1) % MAX_Q;		// 단순 증가(하지만 Queue가 가득 찼을 경우 0으로 wp를 돌린다. - Circular Queue)
     return 1;
 }
  
