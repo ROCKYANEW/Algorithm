@@ -34,24 +34,24 @@ int main(void)
     for(i = 0; i < N; i++) {
         scanf("%d", &cmd);
         switch (cmd) {
-	        case 1:
-				// Push
-	            scanf("%d", &data);
-	            Enqueue(data);
-	            break;
-	        case 0:
-				// Pop
-				if (Dequeue(&data)) {
-	                printf("%d\n",data);
-	            } else {
-	            	printf("E\n");
-	            }
-	            break;
-	        case 2:
-				// Count
-	            if (rp <= wp) printf("%d\n", wp - rp);
-	            else  printf("%d\n", MAX_Q - (rp - wp));
-	            break;
+		case 1:
+			// Push
+			scanf("%d", &data);
+			Enqueue(data);
+			break;
+		case 0:
+			// Pop
+			if (Dequeue(&data)) {
+				printf("%d\n",data);
+			} else {
+				printf("E\n");
+			}
+			break;
+		case 2:
+			// Count
+			if (rp <= wp) printf("%d\n", wp - rp);
+			else  printf("%d\n", MAX_Q - (rp - wp));
+			break;
         }
     }
     return 0;
